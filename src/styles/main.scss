@@ -1,3 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    transition: all 130ms linear;
+    @apply m-0 p-0 box-border;
+  }
+
+  body {
+    @apply dark:bg-dark-secondary;
+    font-family: 'Source Code Pro', monospace;
+  }
+}
+
+@layer utilities {
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+}
+
+@layer components {
+  .theme-icon {
+    @apply size-6 sm:size-7;
+  }
+}

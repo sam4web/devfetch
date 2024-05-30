@@ -4,11 +4,10 @@ import RepoDetail from './RepoDetail';
 const RepoList = ({ repoList }) => {
   const [selectedFilter, setSelectedFilter] = useState('');
   repoList = repoList.splice(0, 6);
-  //   repoList = [];
 
   return (
     <section className='wrapper size-full'>
-      <div className='px-5 py-3 space-y-4'>
+      <div className='wrapper-spacing space-y-4'>
         <div className='flex-between space-x-3'>
           <h2 className='text-xl font-medium border-dashed border-b-2 border-gray-400'>
             Repositories

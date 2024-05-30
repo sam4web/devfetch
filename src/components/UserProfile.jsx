@@ -15,19 +15,21 @@ const UserProfile = ({ user }) => {
 
   return (
     <section className='wrapper size-full'>
-      <div className='px-5 py-4 space-y-4 flex h-full flex-col justify-between'>
-        <div className='space-y-4'>
-          <div className='flex justify-between items-center'>
-            <h2 className='text-2xl font-semibold'>{user.name}</h2>
-            <p className='text-lg font-medium'>
-              Joined {formatDate(user.created_at)}
-            </p>
+      <div className='wrapper-spacing space-y-4 flex h-full flex-col justify-between'>
+        <div className='space-y-6'>
+          <div className='space-y-4'>
+            <div className='flex justify-between md:items-center flex-col md:flex-row'>
+              <h2 className='text-2xl font-semibold'>{user.name}</h2>
+              <p className='text-lg font-medium'>
+                Joined {formatDate(user.created_at)}
+              </p>
+            </div>
+            {user?.bio ? (
+              <p>{user.bio}</p>
+            ) : (
+              <p className='text-lg font-medium'>This profile has no bio.</p>
+            )}
           </div>
-          {user?.bio ? (
-            <p>{user.bio}</p>
-          ) : (
-            <p className='text-lg font-medium'>This profile has no bio.</p>
-          )}
 
           <div className='flex gap-4 flex-wrap'>
             {user.public_repos && (
@@ -51,7 +53,7 @@ const UserProfile = ({ user }) => {
           </div>
         </div>
 
-        <div className='grid grid-cols-2 gap-3.5'>
+        <div className='grid lg:grid-cols-2 gap-3.5'>
           {user.blog && (
             <div className='social-item'>
               <LuGlobe />

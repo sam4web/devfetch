@@ -13,7 +13,7 @@
   }
 
   body {
-    @apply dark:bg-dark-secondary;
+    @apply dark:bg-dark-secondary size-full;
     font-family: 'Source Code Pro', monospace;
   }
 }
@@ -29,6 +29,10 @@
 
   .wrapper {
     @apply dark:bg-neutral dark:text-neutral-content bg-gray-100 shadow-md rounded-xl;
+
+    &-spacing {
+      @apply px-5 py-4;
+    }
   }
 }
 

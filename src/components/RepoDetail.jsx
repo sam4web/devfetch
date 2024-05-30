@@ -9,7 +9,7 @@ import { FaStar } from 'react-icons/fa';
 const RepoDetail = ({ repo }) => {
   return (
     <div className='w-full bg-light px-3 py-2 rounded-lg shadow-sm group hover:shadow-md dark:bg-dark-primary'>
-      <div className='space-y-3 flex h-full flex-col justify-between'>
+      <div className='space-y-4 flex h-full flex-col justify-between'>
         <a className='space-y-2' href={repo.html_url} target='_blank'>
           <h3 className='flex items-center space-x-2 text-xl'>
             <span>
@@ -30,13 +30,21 @@ const RepoDetail = ({ repo }) => {
               <div>{repo.language}</div>
             </div>
 
-            <div className='flex-center space-x-2'>
+            <div className='flex-center space-x-2.5'>
               {repo.homepage && (
-                <a href={repo.homepage} target='_blank' className='text-xl'>
+                <a
+                  href={repo.homepage}
+                  target='_blank'
+                  className='text-xl hover:text-primary'
+                >
                   <LuGlobe />
                 </a>
               )}
-              <a href={repo.html_url} target='_blank' className='text-xl'>
+              <a
+                href={repo.html_url}
+                target='_blank'
+                className='text-xl hover:text-primary'
+              >
                 <FaGithub />
               </a>
             </div>

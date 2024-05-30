@@ -9,20 +9,20 @@ import repoList from '@/utils/mockRepoData';
 const Home = () => {
   return (
     <section>
-      <div className='sm:hidden block'>
-        <SearchBar />
-      </div>
-
-      <section className='grid gap-5 sm:gap-7'>
-        <div className='grid grid-cols-3 gap-5 sm:gap-7'>
-          <UserAvatar user={user} />
-          <div className='col-span-2'>
-            <UserProfile user={user} />
-          </div>
+      <div className='space-y-4'>
+        <div className='sm:hidden block'>
+          <SearchBar />
         </div>
-
-        <RepoList repoList={repoList} />
-      </section>
+        <section className='grid gap-5 sm:gap-7'>
+          <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7'>
+            <UserAvatar user={user} />
+            <div className='lg:col-span-2'>
+              <UserProfile user={user} />
+            </div>
+          </div>
+          <RepoList repoList={repoList} />
+        </section>{' '}
+      </div>
     </section>
   );
 };

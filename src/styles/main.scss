@@ -26,10 +26,39 @@
   .flex-between {
     @apply flex justify-between items-center;
   }
+
+  .wrapper {
+    @apply dark:bg-neutral dark:text-neutral-content bg-gray-100 shadow-md rounded-xl;
+  }
 }
 
 @layer components {
   .theme-icon {
     @apply size-6 sm:size-7;
+  }
+
+  .skel {
+    @apply skeleton dark:bg-neutral;
+  }
+
+  .profile-data {
+    @apply bg-light dark:bg-dark-primary w-36 text-center p-2.5 rounded-lg space-y-1 shadow-sm;
+
+    & > p {
+      @apply capitalize font-medium;
+    }
+
+    & > h4 {
+      @apply text-2xl font-medium;
+    }
+  }
+
+  .social-item {
+    @apply text-xl flex gap-1.5;
+
+    & > p,
+    & > a {
+      @apply text-sm;
+    }
   }
 }

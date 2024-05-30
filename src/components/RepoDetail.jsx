@@ -1,10 +1,11 @@
-import { RiGitRepositoryLine } from 'react-icons/ri';
 import langColors from '@/utils/langColors';
 
+// icons
 import { FaGithub } from 'react-icons/fa';
 import { FaCodeFork } from 'react-icons/fa6';
 import { LuGlobe } from 'react-icons/lu';
 import { FaStar } from 'react-icons/fa';
+import { RiGitRepositoryLine } from 'react-icons/ri';
 
 const RepoDetail = ({ repo }) => {
   return (

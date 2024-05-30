@@ -4,7 +4,7 @@ import { BsBuildings } from 'react-icons/bs';
 import { MdOutlineMailOutline } from 'react-icons/md';
 import { FaXTwitter } from 'react-icons/fa6';
 
-const UserProfile = ({ user }) => {
+const UserDetail = ({ user }) => {
   const formatDate = (date) => {
     return new Date(date).toLocaleString('default', {
       year: 'numeric',
@@ -101,4 +101,4 @@ const UserProfile = ({ user }) => {
   );
 };
 
-export default UserProfile;
+export default UserDetail;

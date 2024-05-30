@@ -6,8 +6,8 @@ const Footer = () => {
     { title: 'daisyUI', ref: 'https://daisyui.com/' },
   ];
   return (
-    <footer className='footer footer-center p-6 wrapper text-base-content'>
-      <aside>
+    <footer className='footer footer-center wrapper'>
+      <aside className='wrapper-spacing'>
         <p className='text-base'>
           Built with{' '}
           {builtWithList.map((item, idx) => (

@@ -1,9 +1,11 @@
 import { useState } from 'react';
+
+// components & pages
 import RepoDetail from './RepoDetail';
 
 const RepoList = ({ repoList }) => {
   const [selectedFilter, setSelectedFilter] = useState('');
-  repoList = repoList.splice(0, 6);
+  repoList = [...repoList].splice(0, 6);
 
   return (
     <section className='wrapper size-full'>

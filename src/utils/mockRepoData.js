@@ -30,7 +30,7 @@ export default [
     },
     html_url: 'https://github.com/bchiang7/Advanced-React',
     description:
-      'Conveniently formulate flexible human capital without enterprise-wide functionalities. Dramatically restore compelling intellectual capital without strategic e-services. Phosfluorescently architect accurate manufactured products without parallel ROI. Appropriately benchmark plug-and-play e-business before unique core competencies. Progressively.',
+      'Conveniently formulate flexible human capital without enterprise-wide functionalities. Dramatically restore compelling intellectual capital without strategic e-services. Phosfluorescently.',
     fork: true,
     url: 'https://api.github.com/repos/bchiang7/Advanced-React',
     forks_url: 'https://api.github.com/repos/bchiang7/Advanced-React/forks',

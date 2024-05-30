@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 const usePageTitle = (title) => {
   const location = useLocation();
-  const defTitle = 'Devfinder';
+  const defTitle = 'Devfetch';
 
   useEffect(() => {
     document.title = title.trim() ? `${defTitle} | ${title}` : defTitle;

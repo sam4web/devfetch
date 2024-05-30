@@ -5,6 +5,7 @@ import UserProfile from '@/components/UserProfile';
 
 import user from '@/utils/mockUserData';
 import repoList from '@/utils/mockRepoData';
+import Skeleton from '@/components/Skeleton';
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
         <div className='sm:hidden block'>
           <SearchBar />
         </div>
+
         <section className='grid gap-5 sm:gap-7'>
           <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7'>
             <UserAvatar user={user} />
@@ -21,7 +23,9 @@ const Home = () => {
             </div>
           </div>
           <RepoList repoList={repoList} />
-        </section>{' '}
+        </section>
+
+        {/* <Skeleton /> */}
       </div>
     </section>
   );

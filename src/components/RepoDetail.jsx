@@ -15,7 +15,10 @@ const RepoDetail = ({ repo }) => {
             <span>
               <RiGitRepositoryLine />
             </span>
-            <span className='group-hover:text-primary'>{repo.name}</span>
+            <span className='group-hover:text-primary'>
+              {repo.name.slice(0, 18)}
+              <span className='text-sm'>{repo.name.length > 18 && '...'}</span>
+            </span>
           </h3>
           {repo.description && <p className='text-sm'>{repo.description}</p>}
         </a>

@@ -1,24 +1,23 @@
 const Footer = () => {
+  const builtWithList = [
+    { title: 'React', ref: 'https://react.dev/' },
+    { title: 'Github API', ref: 'https://docs.github.com/en/rest/' },
+    { title: 'TailwindCSS', ref: 'https://tailwindcss.com/' },
+    { title: 'daisyUI', ref: 'https://daisyui.com/' },
+  ];
   return (
     <footer className='footer footer-center p-6 wrapper text-base-content'>
       <aside>
-        <p>
+        <p className='text-base'>
           Built with{' '}
-          <a href='https://react.dev/' target='_blank'>
-            React
-          </a>{' '}
-          &#183;{' '}
-          <a href='https://docs.github.com/en/rest/' target='_blank'>
-            Github API
-          </a>{' '}
-          &#183;{' '}
-          <a href='https://tailwindcss.com/' target='_blank'>
-            TailwindCSS
-          </a>{' '}
-          &#183;{' '}
-          <a href='https://daisyui.com/' target='_blank'>
-            daisyUI
-          </a>
+          {builtWithList.map((item, idx) => (
+            <span key={idx}>
+              <a href={item.ref} className='text-primary hover:underline'>
+                {item.title}
+              </a>
+              {builtWithList.length - 1 !== idx && <span> &#183; </span>}
+            </span>
+          ))}
         </p>
       </aside>
     </footer>

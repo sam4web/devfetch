@@ -3,7 +3,7 @@ import ThemeController from './ThemeController';
 
 const Header = () => {
   return (
-    <header className='navbar wrapper mb-4 sm:mb-8'>
+    <header className='navbar wrapper'>
       <div className='flex-1'>
         <a className='btn dark:btn-neutral btn-ghost text-xl lg:text-2xl'>
           DevFinder

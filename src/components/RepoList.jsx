@@ -20,7 +20,7 @@ const RepoList = ({ repoList }) => {
             value={selectedFilter}
             onChange={(e) => setSelectedFilter(e.target.value)}
           >
-            <option disabled selected>
+            <option disabled value={''}>
               Filter By
             </option>
             <option value='stars'>Stars</option>

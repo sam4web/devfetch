@@ -6,8 +6,11 @@ import UserDetail from '@/components/UserDetail';
 
 import user from '@/utils/mockUserData';
 import repoList from '@/utils/mockRepoData';
+import usePageTitle from '@/hooks/usePageTitle';
 
 const User = () => {
+  usePageTitle(user.login);
+
   return (
     <section>
       <div className='space-y-4'>

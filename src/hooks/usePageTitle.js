@@ -7,7 +7,6 @@ const usePageTitle = (title) => {
 
   useEffect(() => {
     document.title = title.trim() ? `${defTitle} | ${title}` : defTitle;
-    console.log(title);
   }, [location, title]);
 };
 

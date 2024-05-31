@@ -17,7 +17,7 @@ const Header = () => {
           href='/'
           className='btn dark:btn-neutral btn-ghost text-xl lg:text-2xl'
         >
-          devfinder
+          devfetch
         </a>
       </div>
       <div className='flex-center space-x-3'>

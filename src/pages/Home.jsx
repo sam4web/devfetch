@@ -9,7 +9,7 @@ const Home = () => {
             <img src='/favicon.svg' alt='devfetch icon' />
           </div>
           <h1 className='text-xl sm:text-2xl font-semibold dark:text-neutral-content'>
-            Search for GitHub Profile.{' '}
+            Search for GitHub Profile.
           </h1>
           <SearchBar />
         </div>

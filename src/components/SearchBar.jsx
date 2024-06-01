@@ -1,9 +1,26 @@
+import useUserStore from '@/store';
+
 const SearchBar = () => {
+  const username = useUserStore((state) => state.username);
+  const setUsername = useUserStore((state) => state.setUsername);
+  const fetchUserData = useUserStore((state) => state.fetchUserData);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetchUserData(username);
+  };
+
   return (
-    <div className='flex-center space-x-3'>
+    <form className='flex-center space-x-3' onSubmit={handleSubmit}>
       <label className='input input-bordered flex-1 flex-center gap-2 dark:bg-neutral font-medium dark:text-neutral-content sm:dark:border-neutral-content'>
-        <input type='text' className='grow outline-none' placeholder='Search' />
-        <button className='sm:block hidden'>
+        <input
+          type='text'
+          className='grow outline-none'
+          placeholder='Search'
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <button className='sm:block hidden' type='submit'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 16 16'
@@ -18,7 +35,7 @@ const SearchBar = () => {
           </svg>
         </button>
       </label>
-      <button className='sm:hidden dark:btn-neutral btn px-2.5'>
+      <button className='sm:hidden dark:btn-neutral btn px-2.5' type='submit'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 16 16'
@@ -32,7 +49,7 @@ const SearchBar = () => {
           />
         </svg>
       </button>
-    </div>
+    </form>
   );
 };
 

@@ -1,13 +1,14 @@
 import useUserStore from '@/store';
+import { useNavigate } from 'react-router-dom';
 
 const SearchBar = () => {
   const username = useUserStore((state) => state.username);
   const setUsername = useUserStore((state) => state.setUsername);
-  const fetchUserData = useUserStore((state) => state.fetchUserData);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetchUserData(username);
+    navigate({ pathname: '/user', search: `?id=${username}` });
   };
 
   return (
@@ -19,6 +20,7 @@ const SearchBar = () => {
           placeholder='Search'
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          required
         />
         <button className='sm:block hidden' type='submit'>
           <svg

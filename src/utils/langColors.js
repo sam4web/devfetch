@@ -160,6 +160,8 @@ const langColors = {
   Rust: '#dea584',
   SaltStack: '#646464',
   SAS: '#B34936',
+  SASS: '#cc6699',
+  SCSS: '#cc6699',
   Scala: '#DC322F',
   Scheme: '#1e4aec',
   Self: '#0579aa',

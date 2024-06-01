@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-// components & pages
 import RepoDetail from './RepoDetail';
+import useUserStore from '@/store';
 
-const RepoList = ({ repoList }) => {
+const RepoList = () => {
   const [selectedFilter, setSelectedFilter] = useState('');
-  repoList = [...repoList].splice(0, 6);
+  const repo = useUserStore((state) => state.repo);
 
   return (
     <section className='wrapper size-full'>
@@ -29,9 +29,9 @@ const RepoList = ({ repoList }) => {
           </select>
         </div>
 
-        {repoList.length > 0 ? (
+        {repo.length > 0 ? (
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
-            {repoList.map((repo) => (
+            {repo.map((repo) => (
               <RepoDetail key={repo.id} repo={repo} />
             ))}
           </div>

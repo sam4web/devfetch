@@ -3,8 +3,10 @@ import { IoMdPin } from 'react-icons/io';
 import { BsBuildings } from 'react-icons/bs';
 import { MdOutlineMailOutline } from 'react-icons/md';
 import { FaXTwitter } from 'react-icons/fa6';
+import useUserStore from '@/store';
 
-const UserDetail = ({ user }) => {
+const UserDetail = () => {
+  const user = useUserStore((state) => state.user);
   const formatDate = (date) => {
     return new Date(date).toLocaleString('default', {
       year: 'numeric',
@@ -33,19 +35,19 @@ const UserDetail = ({ user }) => {
 
           <div className='flex gap-4 flex-wrap'>
             {user.public_repos && (
-              <div className='profile-data'>
+              <div className='user-stats'>
                 <h4>{user.public_repos}</h4>
                 <p>repositories</p>
               </div>
             )}
             {user.followers && (
-              <div className='profile-data'>
+              <div className='user-stats'>
                 <h4>{user.followers}</h4>
                 <p>followers</p>
               </div>
             )}
             {user.following && (
-              <div className='profile-data'>
+              <div className='user-stats'>
                 <h4>{user.following}</h4>
                 <p>following</p>
               </div>
@@ -54,37 +56,43 @@ const UserDetail = ({ user }) => {
         </div>
 
         <div className='grid lg:grid-cols-2 gap-3.5'>
-          {user.blog && (
-            <div className='social-item'>
-              <LuGlobe />
-              <a href={user.blog} target='_blank'>
-                {user.blog}
-              </a>
-            </div>
-          )}
+          <div className='social-item'>
+            <LuGlobe />
+            <a href={user.blog} target='_blank'>
+              {user.blog}
+            </a>
+          </div>
 
-          {user.company && (
+          {user.company ? (
             <div className='social-item'>
               <BsBuildings />
               <p>{user.company}</p>
             </div>
+          ) : (
+            ''
           )}
 
-          {user.location && (
+          {user.location ? (
             <div className='social-item'>
               <IoMdPin />
               <p>{user.location}</p>
             </div>
+          ) : (
+            ''
           )}
 
-          {user.email && (
+          {user.email ? (
             <div className='social-item'>
               <MdOutlineMailOutline />
-              <p>{user.email}</p>
+              <a href={user.email} target='_blank'>
+                {user.email}
+              </a>
             </div>
+          ) : (
+            ''
           )}
 
-          {user.twitter_username && (
+          {user.twitter_username ? (
             <div className='social-item'>
               <FaXTwitter />
               <a
@@ -94,6 +102,8 @@ const UserDetail = ({ user }) => {
                 {user.twitter_username}
               </a>
             </div>
+          ) : (
+            ''
           )}
         </div>
       </div>

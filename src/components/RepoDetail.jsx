@@ -9,7 +9,7 @@ import { RiGitRepositoryLine } from 'react-icons/ri';
 
 const RepoDetail = ({ repo }) => {
   return (
-    <div className='w-full bg-light px-3 py-2 rounded-lg shadow-sm group hover:shadow-md dark:bg-dark-primary'>
+    <div className='w-full bg-white px-3 py-2 rounded-lg shadow-sm group hover:shadow-md dark:bg-dark-primary'>
       <div className='space-y-4 flex h-full flex-col justify-between'>
         <a className='space-y-2' href={repo.html_url} target='_blank'>
           <h3 className='flex items-center space-x-2 text-xl'>

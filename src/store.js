@@ -1,20 +1,27 @@
-import { fetchUser } from '@/api';
+import { fetchUser, fetchRepos } from '@/api';
 import { create } from 'zustand';
+import { devtools } from 'zustand/middleware';
 
 const userStore = (set) => ({
-  username: '',
+  username: 'sdf',
   user: {},
+  repo: {},
+  errMsg: '',
+
   setUsername: (username) => set(() => ({ username: username })),
   fetchUserData: async (username) => {
-    const user = await fetchUser(username);
-    return set(() => ({ user: user ? user : {} }));
+    try {
+      const user = await fetchUser(username);
+      const repo = await fetchRepos(username);
+      return set(() => ({ user: user, repo: repo }));
+    } catch (err) {
+      return set({ errMsg: err.message });
+    }
   },
 
-  partialize: (state) => ({
-    username: state.username,
-  }),
+  clearErrors: () => set({ errMsg: '' }),
 });
 
-const useUserStore = create(userStore, { name: 'userStore' });
+const useUserStore = create(devtools(userStore), { name: 'userStore' });
 
 export default useUserStore;

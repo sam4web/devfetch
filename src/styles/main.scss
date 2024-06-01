@@ -45,8 +45,8 @@
     @apply skeleton dark:bg-neutral;
   }
 
-  .profile-data {
-    @apply bg-light dark:bg-dark-primary w-36 text-center p-2.5 rounded-lg space-y-1 shadow-sm;
+  .user-stats {
+    @apply bg-white dark:bg-dark-primary w-32 md:w-36 text-center p-2.5 rounded-lg space-y-1 shadow-sm;
 
     & > p {
       @apply capitalize font-medium;
@@ -58,7 +58,7 @@
   }
 
   .social-item {
-    @apply text-xl flex gap-1.5;
+    @apply flex gap-1.5 text-xl;
 
     & > p,
     & > a {

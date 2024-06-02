@@ -5,7 +5,6 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/devfetch/',
   server: {
     http: 'http://localhost',
     port: 5000,

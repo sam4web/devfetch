@@ -2,6 +2,7 @@ import { Link, Navigate } from 'react-router-dom';
 
 import usePageTitle from '@/hooks/usePageTitle';
 import useUserStore from '@/store';
+import iconImage from '@/assets/images/icon.svg';
 
 const Error = () => {
   const errMsg = useUserStore((state) => state.errMsg);
@@ -14,7 +15,7 @@ const Error = () => {
       <div className='hero-content w-full text-center p-0 sm:wrapper-spacing'>
         <div className='max-w-lg space-y-7'>
           <div className='flex-center'>
-            <img src='/favicon.svg' alt='devfetch icon' />
+            <img src={iconImage} alt='devfetch icon' />
           </div>
           <h2 className='text-xl sm:text-2xl font-semibold dark:text-neutral-content'>
             Something went wrong!

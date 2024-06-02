@@ -4,13 +4,13 @@ import useUserStore from '@/store';
 import { useEffect } from 'react';
 
 const Home = () => {
-  const clearErrors = useUserStore((state) => state.clearErrors);
-  const errors = useUserStore((state) => state.errors);
-  useEffect(() => {
-    clearErrors();
-  }, [clearErrors]);
+  const clearState = useUserStore((state) => state.clearState);
 
   usePageTitle('');
+
+  useEffect(() => {
+    clearState();
+  }, [clearState]);
 
   return (
     <section className='hero min-h-[70vh] size-full'>

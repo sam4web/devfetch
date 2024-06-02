@@ -1,15 +1,22 @@
-import { useState } from 'react';
-
+import filterRepoList from '@/utils/filterRepoList';
 import RepoDetail from './RepoDetail';
 import useUserStore from '@/store';
+import { useEffect, useState } from 'react';
 
 const RepoList = () => {
-  const [selectedFilter, setSelectedFilter] = useState('');
   const repo = useUserStore((state) => state.repo);
+  const filterBy = useUserStore((state) => state.filterBy);
+  const setFilterBy = useUserStore((state) => state.setFilterBy);
+
+  const [repoList, setRepoList] = useState([]);
+
+  useEffect(() => {
+    setRepoList(filterRepoList(repo, filterBy));
+  }, [filterBy, repo]);
 
   return (
     <section className='wrapper size-full'>
-      <div className='wrapper-spacing space-y-4'>
+      <div className='wrapper-spacing space-y-7'>
         <div className='flex-between space-x-3'>
           <h2 className='text-xl font-medium border-dashed border-b-2 border-gray-400'>
             Repositories
@@ -17,8 +24,8 @@ const RepoList = () => {
 
           <select
             className='select select-bordered w-full max-w-40 dark:bg-neutral dark:text-neutral-content dark:border-neutral-content'
-            value={selectedFilter}
-            onChange={(e) => setSelectedFilter(e.target.value)}
+            value={filterBy}
+            onChange={(e) => setFilterBy(e.target.value)}
           >
             <option disabled value={''}>
               Filter By
@@ -29,9 +36,9 @@ const RepoList = () => {
           </select>
         </div>
 
-        {repo.length > 0 ? (
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
-            {repo.map((repo) => (
+        {repoList.length > 0 ? (
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5'>
+            {repoList.map((repo) => (
               <RepoDetail key={repo.id} repo={repo} />
             ))}
           </div>

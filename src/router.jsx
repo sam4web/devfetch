@@ -16,6 +16,7 @@ const router = createBrowserRouter(
         <Route path='home' element={<Home />} />
         <Route path='user' element={<User />} />
         <Route path='error' element={<Error />} />
+        <Route path='*' element={<Error />} />
       </Route>
     </>
   )

@@ -33,35 +33,45 @@ const UserDetail = () => {
             )}
           </div>
 
-          <div className='flex gap-4 flex-wrap'>
-            {user.public_repos && (
+          <div className='flex gap-3 flex-wrap'>
+            {user.public_repos ? (
               <div className='user-stats'>
                 <h4>{user.public_repos}</h4>
                 <p>repositories</p>
               </div>
+            ) : (
+              ''
             )}
-            {user.followers && (
+            {user.followers ? (
               <div className='user-stats'>
                 <h4>{user.followers}</h4>
                 <p>followers</p>
               </div>
+            ) : (
+              ''
             )}
-            {user.following && (
+            {user.following ? (
               <div className='user-stats'>
                 <h4>{user.following}</h4>
                 <p>following</p>
               </div>
+            ) : (
+              ''
             )}
           </div>
         </div>
 
         <div className='grid lg:grid-cols-2 gap-3.5'>
-          <div className='social-item'>
-            <LuGlobe />
-            <a href={user.blog} target='_blank'>
-              {user.blog}
-            </a>
-          </div>
+          {user.blog ? (
+            <div className='social-item'>
+              <LuGlobe />
+              <a href={user.blog} target='_blank'>
+                {user.blog}
+              </a>
+            </div>
+          ) : (
+            ''
+          )}
 
           {user.company ? (
             <div className='social-item'>
@@ -84,7 +94,7 @@ const UserDetail = () => {
           {user.email ? (
             <div className='social-item'>
               <MdOutlineMailOutline />
-              <a href={user.email} target='_blank'>
+              <a href={`mailto:${user.email}`} target='_blank'>
                 {user.email}
               </a>
             </div>

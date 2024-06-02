@@ -1,13 +1,20 @@
-import { fetchUser, fetchRepos } from '@/api';
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-const userStore = (set) => ({
-  username: 'sdf',
-  user: {},
-  repo: {},
-  errMsg: '',
+import { fetchUser, fetchRepos } from '@/api';
 
+const initialState = {
+  username: '',
+  user: {},
+  repo: [],
+  errMsg: '',
+  filterBy: '',
+};
+
+const userStore = (set) => ({
+  ...initialState,
+
+  setFilterBy: (filterBy) => set({ filterBy: filterBy }),
   setUsername: (username) => set(() => ({ username: username })),
   fetchUserData: async (username) => {
     try {
@@ -18,8 +25,7 @@ const userStore = (set) => ({
       return set({ errMsg: err.message });
     }
   },
-
-  clearErrors: () => set({ errMsg: '' }),
+  clearState: () => set({ ...initialState }),
 });
 
 const useUserStore = create(devtools(userStore), { name: 'userStore' });

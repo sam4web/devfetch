@@ -65,7 +65,7 @@ const UserDetail = () => {
           {user.blog ? (
             <div className='social-item'>
               <LuGlobe />
-              <a href={`https://${user.blog}`} target='_blank'>
+              <a href={user.blog} target='_blank'>
                 {user.blog}
               </a>
             </div>

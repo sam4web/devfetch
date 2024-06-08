@@ -35,26 +35,38 @@ const UserDetail = () => {
 
           <div className='flex gap-3 flex-wrap'>
             {user.public_repos ? (
-              <div className='user-stats'>
+              <a
+                className='user-stats hover:shadow-md hover:text-primary'
+                target='_blank'
+                href={`https://github.com/${user.login}?tab=repositories`}
+              >
                 <h4>{user.public_repos}</h4>
                 <p>repositories</p>
-              </div>
+              </a>
             ) : (
               ''
             )}
             {user.followers ? (
-              <div className='user-stats'>
+              <a
+                className='user-stats hover:shadow-md hover:text-primary'
+                target='_blank'
+                href={`https://github.com/${user.login}?tab=followers`}
+              >
                 <h4>{user.followers}</h4>
                 <p>followers</p>
-              </div>
+              </a>
             ) : (
               ''
             )}
             {user.following ? (
-              <div className='user-stats'>
+              <a
+                className='user-stats hover:shadow-md hover:text-primary'
+                target='_blank'
+                href={`https://github.com/${user.login}?tab=following`}
+              >
                 <h4>{user.following}</h4>
                 <p>following</p>
-              </div>
+              </a>
             ) : (
               ''
             )}

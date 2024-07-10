@@ -15,6 +15,11 @@ const UserDetail = () => {
     });
   };
 
+  const checkUserBlogUrl = (url) => {
+    if (url.includes('https://')) return url;
+    return 'https://' + url;
+  };
+
   return (
     <section className='wrapper size-full'>
       <div className='wrapper-spacing space-y-4 flex h-full flex-col justify-between'>
@@ -77,7 +82,7 @@ const UserDetail = () => {
           {user.blog ? (
             <div className='social-item'>
               <LuGlobe />
-              <a href={user.blog} target='_blank'>
+              <a href={checkUserBlogUrl(user.blog)} target='_blank'>
                 {user.blog}
               </a>
             </div>
